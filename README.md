@@ -1,0 +1,2 @@
+# clock
+A javascript clock.
