@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+</head>
+<script type="text/javascript">
+    function getnow() {
+        //1、获得当前时间，格式化时间
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        if (month < 10) {
+            month = "0" + month;
+        }
+        var date = now.getDate();
+        if (date < 10) {
+            date = "0" + date;
+        }
+        var hour = now.getHours();
+        if (hour < 10) {
+            hour = "0" + hour;
+        }
+        var minute = now.getMinutes();
+        if (minute < 10) {
+            minute = "0" + minute;
+        }
+        var second = now.getSeconds();
+        if (second < 10) {
+            second = "0" + second;
+        }
+        var nowstr = year + "年" + month + "月" + date + "日  " + hour + ":" + minute + ":" + second;
+        //alert(nowstr);
+        //2、显示时间 html
+        //获得标签对象
+        var nowspan = document.getElementById("nowspan");
+        nowspan.innerHTML = nowstr;
+        //3、使时间动起来
+        setTimeout("getnow()", 1000);
+    }
+</script>
+
+<body onLoad="getnow()">
+    <script>
+        function dark() {
+            document.body.style.backgroundColor = "black"
+            document.getElementById("nowspan").style.color = "white"
+        }
+
+        function light() {
+            document.body.style.backgroundColor = "white"
+            document.getElementById("nowspan").style.color = "black"
+        }
+    </script>
+    <button type="button" onclick="dark()">深色模式</button>
+    <p></p>
+    <button type="button" onclick="light()">浅色模式</button>
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+    <h1 id="nowspan"></h1>
+</body>
+
+</html>
