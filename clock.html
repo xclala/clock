@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>时钟</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        function dark() {
+            document.body.style.backgroundColor = "black"
+            document.getElementById("day").style.color = "white"
+            document.getElementById("time").style.color = "white"
+        }
+
+        function light() {
+            document.body.style.backgroundColor = "white"
+        }
+    </script>
+    <button type="button" onclick="dark()">深色模式</button>
+    <p></p>
+    <button type="button" onclick="light()">浅色模式</button>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        header {
+            width: 300px;
+            height: 350px;
+            /* border:1px solid black;             */
+            /*让父元素居中*/
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .day,
+        .time {
+            /*星期样式*/
+            width: 100%;
+            box-sizing: border-box;
+            /*一些华丽花哨的让文字好看一点*/
+            padding: 5px 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.5em;
+            border: 1px solid black;
+        }
+
+        .clock {
+            margin: 5px auto;
+            width: 250px;
+            height: 250px;
+            border-radius: 100%;
+            border: 2px solid gray;
+            background: lightblue;
+            display: flex;
+            justify-content: center;
+        }
+
+        .clock>div {
+            /*时钟下div的通用设置*/
+            position: absolute;
+            /*让所有圆点在在圆心上*/
+            bottom: 50%;
+            border-radius: 100% 100% 0 0;
+            transform-origin: bottom center;
+        }
+
+        .seconds {
+            width: 4px;
+            height: 110px;
+            background: #777;
+            /* transform: rotate(45deg); */
+        }
+
+        .minutes {
+            width: 8px;
+            height: 90px;
+            background: orange;
+        }
+
+        .hours {
+            width: 11px;
+            height: 75px;
+            background: pink;
+        }
+
+        div.clock_center {
+            border-radius: 100%;
+            width: 15px;
+            height: 15px;
+            background: #777;
+            transform: translateY(50%);
+        }
+    </style>
+    <script>
+        window.onload = function () { //让js代码最后加载
+            var listclass = ['seconds', 'minutes', 'hours', 'day', 'time']; //获取所有元素
+            listclass.forEach((val, index, item) => {
+                item[index] = document.querySelector(item[index]);
+                document.querySelector("." + val).setAttribute('id', val);
+            })
+            var thistime, s, h, m; //注册时间变量
+            var roateS, roateH, roateM; //注册旋转变量
+            var thisday = ['日', '一', '二', '三', '四', '五', '六']
+            setInterval(() => { //每秒获取一次时间
+                thistime = new Date();
+                s = thistime.getSeconds();
+                roateS = (s * 6); //秒每秒旋转度时
+                m = thistime.getMinutes();
+                roateM = (m * 6) + (s / 10); //分每秒旋转度时
+                //这里我是让分钟慢慢走，所以加上了秒/10，秒钟跳着走
+                h = thistime.getHours();
+                //小时一圈可不是360度
+                roateH = (h % 12 * 30) + (m / 2);
+                seconds.style.transform = `rotate(${roateS}deg)`;
+                minutes.style.transform = `rotate(${roateM}deg)`;
+                hours.style.transform = `rotate(${roateH}deg)`;
+                //显示当前的时间
+                day.innerHTML = "星期" + thisday[thistime.getDay()];
+                time.innerHTML = `${show(h)}:${show(m)}:${show(s)}`
+
+            }, 1000);
+
+            function show(newtime) { //这里是让位数永远保持两位     
+                return newtime > 10 ? newtime : "0" + newtime;
+            }
+        }
+    </script>
+    <a href="index.html"><br>切换至电子钟</a>
+    <header>
+        <div class="day"></div>
+        <!--星期-->
+        <div class="clock">
+            <!--时钟的表盘-->
+            <div class="seconds"></div>
+            <!--时钟的秒针-->
+            <div class="minutes"></div>
+            <!--时钟的分针-->
+            <div class="hours"></div>
+            <!--时钟的时针-->
+            <div class="clock_center"></div>
+            <!--时钟中间的圆-->
+        </div>
+        <div class="time"></div>
+        <!--电子时间-->
+    </header>
+</body>
+
+</html>
