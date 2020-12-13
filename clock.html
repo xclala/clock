@@ -8,20 +8,12 @@
 
 <body>
     <script>
-        function dark() {
-            document.body.style.backgroundColor = "black"
-            document.getElementById("day").style.color = "white"
-            document.getElementById("time").style.color = "white"
-        }
-
         function light() {
             document.body.style.backgroundColor = "white"
             document.getElementById("day").style.color = "black"
             document.getElementById("time").style.color = "black"
         }
     </script>
-    <button type="button" onclick="dark()">深色模式</button>
-    <p></p>
     <button type="button" onclick="light()">浅色模式</button>
     <p></p>
     <a href="clock.html">还原</a>
@@ -158,6 +150,15 @@
         <div class="time"></div>
         <!--电子时间-->
     </header>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div").click(function () {
+                $("body").css("background", "black")
+                $("div").css("color", "white")
+            })
+        })
+    </script>
 </body>
 
 </html>
