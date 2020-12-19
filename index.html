@@ -66,28 +66,24 @@
 </script>
 
 <body onLoad="getnow()">
-    <script>
-        function light() {
-            document.body.style.backgroundColor = "white"
-            document.getElementById("nowspan").style.color = "black"
-        }
-    </script>
-    <button type="button" onclick="light()">浅色模式</button>
     <style>
         h1 {
             text-align: center;
             font-size: 100px;
         }
     </style>
-    <p></p>
     <a href="clock.html"><br>切换至时钟</a>
     <h1 id="nowspan"></h1>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
+            var bg=['white','black']
+            var tg=['black','white']
+            var c=0
             $("h1").click(function () {
-                $("body").css("background", "black")
-                $("h1").css("color", "white")
+                $("body").css("background", bg[c%2])
+                $("h1").css("color", tg[c%2])
+                c++
             })
         })
     </script>

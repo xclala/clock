@@ -7,16 +7,6 @@
 </head>
 
 <body>
-    <script>
-        function light() {
-            document.body.style.backgroundColor = "white"
-            document.getElementById("day").style.color = "black"
-            document.getElementById("time").style.color = "black"
-        }
-    </script>
-    <button type="button" onclick="light()">浅色模式</button>
-    <p></p>
-    <a href="clock.html">还原</a>
     <style>
         * {
             margin: 0;
@@ -153,9 +143,13 @@
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
+            var bg = ['black', 'white', '#ebe6e6']
+            var tg = ['white', 'black','black']
+            var c = 0
             $("div").click(function () {
-                $("body").css("background", "black")
-                $("div").css("color", "white")
+                $("body").css("background", bg[c % 3])
+                $("div").css("color", tg[c % 3])
+                c++
             })
         })
     </script>
