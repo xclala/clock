@@ -8,6 +8,12 @@
 
 <body>
     <style>
+        html {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -144,7 +150,7 @@
     <script>
         $(document).ready(function () {
             var bg = ['black', 'white', '#ebe6e6']
-            var tg = ['white', 'black','black']
+            var tg = ['white', 'black', 'black']
             var c = 0
             $("div").click(function () {
                 $("body").css("background", bg[c % 3])

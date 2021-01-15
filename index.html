@@ -67,6 +67,12 @@
 
 <body onLoad="getnow()">
     <style>
+        html {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
         h1 {
             text-align: center;
             font-size: 100px;
@@ -77,12 +83,12 @@
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            var bg=['black','white']
-            var tg=['white','black']
-            var c=0
+            var bg = ['black', 'white']
+            var tg = ['white', 'black']
+            var c = 0
             $("h1").click(function () {
-                $("body").css("background", bg[c%2])
-                $("h1").css("color", tg[c%2])
+                $("body").css("background", bg[c % 2])
+                $("h1").css("color", tg[c % 2])
                 c++
             })
         })
