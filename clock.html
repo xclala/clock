@@ -22,9 +22,28 @@
             padding: 0;
         }
 
+        @media(prefers-color-scheme:dark) {
+            body {
+                background-color: black;
+            }
+
+            div {
+                color: white;
+            }
+        }
+
+        @media(prefers-color-scheme:light) {
+            body {
+                background-color: #ebe6e6;;
+            }
+
+            div {
+                color: black;
+            }
+        }
+
         body {
             height: 100vh;
-            background-color: #ebe6e6;
         }
 
         header {
