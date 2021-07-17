@@ -10,21 +10,21 @@
 </head>
 <script type="text/javascript">
     function getnow() {
-        //1、获得当前时间，格式化时间
-        var now = new Date();
-        var year = now.getFullYear();
-        var month = now.getMonth() + 1;
-        var week = new Date().getDay();
-        var date = now.getDate();
-        var hour = now.getHours();
+        //获得当前时间，格式化时间
+        let now = new Date();
+        let year = now.getFullYear();
+        let month = now.getMonth() + 1;
+        let week = new Date().getDay();
+        let date = now.getDate();
+        let hour = now.getHours();
         if (hour < 10) {
             hour = "0" + hour;
         }
-        var minute = now.getMinutes();
+        let minute = now.getMinutes();
         if (minute < 10) {
             minute = "0" + minute;
         }
-        var second = now.getSeconds();
+        let second = now.getSeconds();
         if (second < 10) {
             second = "0" + second;
         }
@@ -51,14 +51,10 @@
                 week = "星期六";
                 break;
         }
-        //hour=Number(hour)+16
-        var nowstr = year + "年" + month + "月" + date + "日 " + hour + ":" + minute + ":" + second + " " + week;
-        //alert(nowstr);
-        //2、显示时间 html
-        //获得标签对象
-        var nowspan = document.getElementById("nowspan");
-        nowspan.innerHTML = nowstr;
-        //3、使时间动起来
+        let nowstr = year + "年" + month + "月" + date + "日 " + hour + ":" + minute + ":" + second + " " + week;
+        //显示时间
+        document.getElementById("nowspan").innerHTML = nowstr;
+        //使时间动起来
         setTimeout("getnow()", 1000);
     }
 </script>
@@ -110,12 +106,12 @@
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            var bg = ['black', 'white']
-            var tg = ['white', 'black']
-            var c = 0
+            const BACKGROUNDCOLOR = ['black', 'white']
+            const TEXTCOLOR = ['white', 'black']
+            let c = 0
             $("h1").click(function () {
-                $("body").css("background", bg[c % 2])
-                $("h1").css("color", tg[c % 2])
+                $("body").css("background", BACKGROUNDCOLOR[c % 2])
+                $("h1").css("color", TEXTCOLOR[c % 2])
                 c++
             })
         })
