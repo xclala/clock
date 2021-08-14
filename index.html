@@ -54,18 +54,15 @@
     <a href="..">🔙</a>
     <a href="clock.html"><br>切换至时钟</a>
     <h1 id="nowspan"></h1>
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-            const BACKGROUNDCOLOR = ['black', 'white']
-            const TEXTCOLOR = ['white', 'black']
-            let c = 0
-            $("h1").click(function () {
-                $("body").css("background", BACKGROUNDCOLOR[c % 2])
-                $("h1").css("color", TEXTCOLOR[c % 2])
-                c++
-            })
-        })
+        const BACKGROUNDCOLOR = ['black', 'white']
+        const TEXTCOLOR = ['white', 'black']
+        let c = 0
+        document.getElementById("nowspan").onclick = function () {
+            document.body.style.backgroundColor = BACKGROUNDCOLOR[c % 2]
+            document.getElementById("nowspan").style.color = TEXTCOLOR[c % 2]
+            c++
+        }
     </script>
     <a href="qrcode.png">二维码<br></a>
     <p></p>

@@ -176,18 +176,16 @@
         <div class="time"></div>
         <!--电子时间-->
     </header>
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-            var BACKGROUNDCOLOR = ['#111114', 'white', '#ebe6e6']
-            var TEXTCOLOR = ['white', 'black', 'black']
-            let c = 0
-            $("div").click(function () {
-                $("body").css("background", BACKGROUNDCOLOR[c % 3])
-                $("div").css("color", TEXTCOLOR[c % 3])
-                c++
-            })
-        })
+        const BACKGROUNDCOLOR = ['#111114', 'white', '#ebe6e6']
+        const TEXTCOLOR = ['white', 'black', 'black']
+        let c = 0
+        document.getElementsByTagName("header")[0].onclick = function () {
+            document.body.style.backgroundColor = BACKGROUNDCOLOR[c % 3]
+            document.getElementsByClassName("day")[0].style.color = TEXTCOLOR[c % 3]
+            document.getElementsByClassName("time")[0].style.color = TEXTCOLOR[c % 3]
+            c++
+        }
     </script>
 </body>
 
