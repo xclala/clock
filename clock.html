@@ -139,7 +139,7 @@
                 roateS = (s * 6); //秒每秒旋转度时
                 m = thistime.getMinutes();
                 roateM = (m * 6) + (s / 10); //分每秒旋转度时
-                //这里我是让分钟慢慢走，所以加上了秒/10，秒钟跳着走
+                //让分钟慢慢走，所以加上了秒/10，秒钟跳着走
                 h = thistime.getHours();
                 //小时一圈可不是360度
                 roateH = (h % 12 * 30) + (m / 2);
@@ -157,8 +157,9 @@
             }
         }
     </script>
-    <p></p>
-    <a href="index.html"><br>切换至电子钟</a>
+    <a href="https://github.com/xclala/clock">
+        <img src="../../github.svg">
+    </a>
     <header>
         <div class="day"></div>
         <!--星期-->
@@ -176,6 +177,7 @@
         <div class="time"></div>
         <!--电子时间-->
     </header>
+    <a href="index.html"><br>切换至电子钟</a>
     <script>
         const BACKGROUNDCOLOR = ['#111114', 'white', '#ebe6e6']
         const TEXTCOLOR = ['white', 'black', 'black']
