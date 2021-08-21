@@ -2,10 +2,28 @@ function getnow() {
     //获得当前时间，格式化时间
     let now = new Date();
     let year = now.getFullYear();
+    let leap_year = ""
     let month = now.getMonth() + 1;
     let week = new Date().getDay();
     let date = now.getDate();
     let hour = now.getHours();
+    if (year % 4 == 0) {
+        if (year % 100 != 0) {
+            leap_year = "闰年"
+            //闰年
+        } else {
+            if (year % 400 == 0) {
+                leap_year = "闰年"
+                //闰年
+            } else {
+                leap_year = "平年"
+                //平年
+            }
+        }
+    } else {
+        leap_year = "平年"
+        //平年
+    }
     if (hour < 10) {
         hour = "0" + hour;
     }
@@ -40,7 +58,7 @@ function getnow() {
             week = "星期六";
             break;
     }
-    let nowstr = year + "年" + month + "月" + date + "日 " + hour + ":" + minute + ":" + second + " " + week;
+    let nowstr = year + "年" + month + "月" + date + "日 " + leap_year + " " + hour + ":" + minute + ":" + second + " " + week;
     //显示时间
     document.getElementById("nowspan").innerHTML = nowstr;
     //使时间动起来
