@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="时钟">
     <meta name="author" content="邢栋">
-    <link rel="icon" type="image/x-ico" href="https://xclala.github.io/favicon.ico">
+    <link rel="icon" type="image/x-ico" href="../../favicon.ico">
 </head>
 
 <body>
@@ -177,22 +177,6 @@
         <div class="time"></div>
         <!--电子时间-->
     </header>
-    <a href="https://gitee.com/xclala/clock/blob/gh-pages/LICENSE">
-        <img src="https://img.shields.io/github/license/xclala/clock?style=for-the-badge">
-    </a>
-    <p></p>
-    <a href="index.html"><br>切换至电子钟</a>
-    <script>
-        const BACKGROUNDCOLOR = ['rgb(35,35,35)', 'white', '#ebe6e6']
-        const TEXTCOLOR = ['white', 'black', 'black']
-        let c = 0
-        document.getElementsByTagName("header")[0].onclick = function () {
-            document.body.style.backgroundColor = BACKGROUNDCOLOR[c % 3]
-            document.getElementsByClassName("day")[0].style.color = TEXTCOLOR[c % 3]
-            document.getElementsByClassName("time")[0].style.color = TEXTCOLOR[c % 3]
-            c++
-        }
-    </script>
 </body>
 
 </html>
