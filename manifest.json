@@ -1,6 +1,6 @@
 {
-"name": "钟",
-"short_name": "钟",
+"name": "clock",
+"short_name": "clock",
 "start_url": ".",
 "display": "standalone",
 "description": "",
