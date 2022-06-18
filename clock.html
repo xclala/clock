@@ -45,10 +45,11 @@
 
         @media(prefers-color-scheme:dark) {
             body {
-                background-color: rgb(35,35,35);
+                background-color: rgb(35, 35, 35);
             }
 
-            div {
+            .day,
+            .time {
                 color: white;
             }
         }
@@ -58,7 +59,8 @@
                 background-color: #ebe6e6;
             }
 
-            div {
+            .day,
+            .time {
                 color: black;
             }
         }
@@ -79,7 +81,7 @@
 
         .day,
         .time {
-            /*星期样式*/
+            /*星期和时间样式*/
             width: 100%;
             box-sizing: border-box;
             /*一些华丽花哨的让文字好看一点*/
