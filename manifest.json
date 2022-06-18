@@ -1,9 +1,9 @@
 {
 "name": "钟",
 "short_name": "钟",
-"start_url": "https://xclala.gitee.io/clock",
+"start_url": ".",
 "display": "standalone",
-"description": "A description for your application",
+"description": "",
 "lang": "Chinese",
 "dir": "auto",
 "theme_color": "#000000",
