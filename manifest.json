@@ -37,7 +37,7 @@
         "url": " The URL to your app in that app store"
     }
 ],
-"prefer_related_applications": "false",
+"prefer_related_applications": false,
 "shortcuts": [
     {
         "name":"The name you would like to be displayed for your shortcut",
