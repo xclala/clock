@@ -10,19 +10,15 @@ function getnow() {
     if (year % 4 == 0) {
         if (year % 100 != 0) {
             leap_year = "闰年"
-            //闰年
         } else {
             if (year % 400 == 0) {
                 leap_year = "闰年"
-                //闰年
             } else {
                 leap_year = "平年"
-                //平年
             }
         }
     } else {
         leap_year = "平年"
-        //平年
     }
     if (hour < 10) {
         hour = "0" + hour;
