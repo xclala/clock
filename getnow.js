@@ -54,7 +54,7 @@ function getnow() {
             week = "星期六";
             break;
     }
-    let nowstr = year + "年" + month + "月" + date + "日 " + leap_year + " " + hour + ":" + minute + ":" + second + " " + week;
+    let nowstr = `${year}年${month}月${date}日 ${leap_year} ${hour}:${minute}:${second} ${week};`
     //显示时间
     document.getElementById("nowspan").innerHTML = nowstr;
     //使时间动起来
